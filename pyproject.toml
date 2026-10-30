@@ -15,6 +15,7 @@ license = {text = "Apache-2.0"}
 requires-python = ">=3.12"
 dependencies = [
     "attrs",
+    "zigpy-blz @ git+https://github.com/bouffalolab/zigpy-blz.git@f080f7e",
     "frozendict",
     "bellows==1.1.0",
     "zigpy-znp==1.1.1",

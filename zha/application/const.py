@@ -12,6 +12,7 @@ import zigpy_xbee.zigbee.application
 import zigpy_zigate.zigbee.application
 import zigpy_ziggurat.zigbee.application
 import zigpy_znp.zigbee.application
+import zigpy_blz.zigbee.application
 
 ATTR_ACTIVE_COORDINATOR = "active_coordinator"
 ATTR_ARGS = "args"
@@ -124,10 +125,16 @@ class RadioType(enum.Enum):
         zigpy_xbee.zigbee.application.ControllerApplication,
     )
 
+    blz = (
+        "BLZ = Bouffalo Lab Zigbee radios: BL702/4/6",
+        zigpy_blz.zigbee.application.ControllerApplication,
+    )
+
     @classmethod
     def list(cls) -> list[str]:
         """Return a list of descriptions."""
         return [e.description for e in RadioType]
+
 
     @classmethod
     def get_by_description(cls, description: str) -> RadioType:
